@@ -17,9 +17,10 @@ import lombok.Setter;
 public class AccountUserEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    private String email;
-    private String password;
-    private  boolean state;
+    private  Long id;
+    private  String email;
+    private  String password;
+    private  Boolean state;
+
 
 }
