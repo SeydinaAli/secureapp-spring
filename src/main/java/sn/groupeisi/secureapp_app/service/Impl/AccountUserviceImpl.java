@@ -36,7 +36,7 @@ public class AccountUserviceImpl implements AccountUserService {
 
     @Override
     public void updateUser(Long id, AccountUserEntity accountUserEntity) {
-        // chech weather the accountUserEntity is in database or not
+
         accountUserRepository
                 .findById(id)
                 .orElseThrow(()->new ResponseStatusException(HttpStatus.NOT_FOUND, "Invalid accountUser id"+id));
@@ -47,21 +47,12 @@ public class AccountUserviceImpl implements AccountUserService {
 
     @Override
     public void deleteUser(Long id) {
-        // check weather the user is in database or not
+
         AccountUserEntity accountUserEntity = accountUserRepository
                 .findById(id)
                 .orElseThrow(()->new ResponseStatusException(HttpStatus.NOT_FOUND, "Invalid accountUser id"+id));
         accountUserRepository.delete(accountUserEntity);
 
-
     }
-
-
-
-  /*  @Override
-    public void updateName(Long id, AccountUserDto accountUserDto) {
-
-    }*/
-
 
 }
